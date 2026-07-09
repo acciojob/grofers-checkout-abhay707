@@ -19,7 +19,7 @@ const getSum = () => {
     table.innerHTML += `
         <tr>
             <td class="total_item">Total</td>
-            <td class="total_price">${sum}</td>
+            <td id="ans">${sum}</td>
         </tr>
     `
 };
