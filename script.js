@@ -5,7 +5,7 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {  
 	
-    let prices = document.querySelectorAll(".price");
+    let prices = document.querySelectorAll(".prices");
 
     let len = prices.length;
 
@@ -15,13 +15,18 @@ const getSum = () => {
     }
 
     const table = document.getElementById("table");
+	let ans = document.getElementById("ans");
     
-    table.innerHTML += `
-        <tr>
-            <td class="total_item">Total</td>
-            <td id="ans">${sum}</td>
-        </tr>
-    `
+    if (!ans) {
+        table.innerHTML += `
+            <tr>
+                <td>Total</td>
+                <td id="ans">${sum}</td>
+            </tr>
+        `;
+    } else {
+        ans.textContent = sum;
+    }
 };
 
 getSumBtn.addEventListener("click", getSum);
